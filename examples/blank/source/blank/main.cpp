@@ -2,7 +2,14 @@
 
 int main()
 {
-	Glenn::Initialize();
+	Glenn::Initialize(800, 600, "Blank");
+
+	while (!Glenn::ShouldClose())
+	{
+		Glenn::Begin();
+		Glenn::End();
+	}
+
 	Glenn::Shutdown();
 
 	return 0;

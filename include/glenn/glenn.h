@@ -2,6 +2,9 @@
 
 namespace Glenn
 {
-    void Initialize();
+    void Initialize(unsigned int width, unsigned int heigth, const char* title);
+    void Begin();
+    bool ShouldClose();
+    void End();
     void Shutdown();
 }

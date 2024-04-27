@@ -7,7 +7,7 @@ add_subdirectory(external)
 file(GLOB GLENN_HEADERS include/glenn/*.h)
 file(GLOB GLENN_SOURCES source/glenn/*.cpp)
 add_library(Glenn STATIC ${GLENN_SOURCES} ${GLENN_HEADERS})
-target_link_libraries(Glenn glfw)
+target_link_libraries(Glenn glfw glad)
 target_include_directories(Glenn PUBLIC
     include/
 )
