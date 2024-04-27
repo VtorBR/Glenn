@@ -15,13 +15,20 @@ FetchContent_Declare(
 )
 
 FetchContent_Declare(
+  glm
+  GIT_REPOSITORY https://github.com/g-truc/glm.git
+  GIT_TAG        1.0.1
+  SOURCE_DIR     ${CMAKE_SOURCE_DIR}/external/glm
+)
+
+FetchContent_Declare(
   ImGui
   GIT_REPOSITORY https://github.com/ocornut/imgui.git
   GIT_TAG        v1.90.5-docking
   SOURCE_DIR     ${CMAKE_SOURCE_DIR}/external/imgui
 )
 
-FetchContent_MakeAvailable(glfw)
+FetchContent_MakeAvailable(glfw glm)
 
 FetchContent_Populate(glad)
 
