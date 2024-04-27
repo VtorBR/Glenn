@@ -1,3 +1,5 @@
+#include "blank/ui.h"
+
 #include <glenn/glenn.h>
 
 int main()
@@ -7,6 +9,9 @@ int main()
 	while (!Glenn::ShouldClose())
 	{
 		Glenn::Begin();
+
+		UI::DrawDemo();
+
 		Glenn::End();
 	}
 

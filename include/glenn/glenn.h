@@ -3,8 +3,8 @@
 namespace Glenn
 {
     void Initialize(unsigned int width, unsigned int heigth, const char* title);
-    void Begin();
     bool ShouldClose();
+    void Begin();
     void End();
     void Shutdown();
 }
