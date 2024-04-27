@@ -45,8 +45,8 @@ file(GLOB IMGUI_HEADERS ${imgui_SOURCE_DIR}/*.h)
 file(GLOB IMGUI_SOURCES ${imgui_SOURCE_DIR}/*.cpp)
 add_library(ImGui STATIC ${IMGUI_SOURCES} ${IMGUI_HEADERS})
 target_include_directories(ImGui
-  PUBLIC imgui
-  INTERFACE ${ImGui_SOURCE_DIR}/
+  INTERFACE ${imgui_SOURCE_DIR}/../
+  PRIVATE ${imgui_SOURCE_DIR}/
 )
 set_target_properties(ImGui PROPERTIES
   FOLDER "ImGui"
@@ -62,7 +62,14 @@ file(GLOB IMGUI_BACKEND_SOURCES
   ${imgui_SOURCE_DIR}/backends/imgui_impl_opengl3.cpp
 )
 add_library(ImGuiBackend STATIC ${IMGUI_BACKEND_SOURCES} ${IMGUI_BACKEND_HEADERS})
-target_link_libraries(ImGuiBackend glad glfw ImGui)
+target_link_libraries(ImGuiBackend
+  PRIVATE glad
+  PRIVATE glfw
+  PRIVATE ImGui
+)
+target_include_directories(ImGuiBackend
+  PUBLIC ${imgui_SOURCE_DIR}/
+)
 set_target_properties(ImGuiBackend PROPERTIES
     FOLDER "ImGui"
 )

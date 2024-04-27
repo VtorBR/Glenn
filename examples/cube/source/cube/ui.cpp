@@ -1,7 +1,7 @@
 #include "cube/ui.h"
 
 #include <imgui/imgui.h>
-#include <glm/glm/gtc/type_ptr.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 void Cube::UI::Draw(State& state)
 {
