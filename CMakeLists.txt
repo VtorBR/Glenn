@@ -8,3 +8,5 @@ add_library(Glenn STATIC ${GLENN_SOURCES} ${GLENN_HEADERS})
 target_include_directories(Glenn PUBLIC
     include/
 )
+
+add_subdirectory(examples)
