@@ -18,4 +18,8 @@ target_include_directories(Glenn
     PUBLIC include/
 )
 
-add_subdirectory(examples)
+option(GLENN_EXAMPLES "Inlucdes examples of Glenn usage" ON)
+
+if (GLENN_EXAMPLES)
+    add_subdirectory(examples)
+endif()

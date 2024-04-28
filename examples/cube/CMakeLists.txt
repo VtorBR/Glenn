@@ -5,7 +5,9 @@ target_link_libraries(Cube
     PRIVATE Glenn
     PRIVATE ImGui
 )
-
 target_include_directories(Cube
     PRIVATE include/
+)
+set_target_properties(Cube PROPERTIES
+    FOLDER "Examples"
 )
